@@ -110,13 +110,16 @@ data:
     ingress:
       enabled: true
       className: ""
-      annotations: {}
+      annotations: {
+    "ingress.kubernetes.io/rewrite-target" : "/api/$2",
+    "kubernetes.io/ingress.class" : "nginx"
+    }
         # kubernetes.io/ingress.class: nginx
         # kubernetes.io/tls-acme: "true"
       hosts:
         - host: epricesx.duckdns.org
           paths:
-            - path: /podinfo
+            - path: /podinfo(/|$)(.*)
               pathType: Prefix
       tls: []
       #  - secretName: chart-example-tls
