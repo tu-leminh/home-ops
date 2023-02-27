@@ -2,8 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: podinfo-helm-chart-value-overrides
-  namespace: podinfo
+  name: sonarr-helm-chart-value-overrides
+  namespace: sonarr
 data:
   values.yaml: |-
     image:
