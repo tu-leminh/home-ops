@@ -114,10 +114,10 @@ data:
         # kubernetes.io/ingress.class: nginx
         # kubernetes.io/tls-acme: "true"
       hosts:
-        - host: podinfo.epricesx.duckdns.org
+        - host: epricesx.duckdns.org
           paths:
-            - path: /
-              pathType: ImplementationSpecific
+            - path: /podinfo
+              pathType: Prefix
       tls: []
       #  - secretName: chart-example-tls
       #    hosts:
