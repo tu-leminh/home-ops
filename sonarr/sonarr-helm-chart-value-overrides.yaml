@@ -13,10 +13,11 @@ data:
 
     service:
       main:
+        type: LoadBalancer
         ports:
           main:
             port: 8989
-            targetPort: 8989
+            targetPort: 80
 
     probes:
       liveness:
@@ -46,20 +47,3 @@ data:
 
     portal:
       enabled: true
-
-    service:
-      main:
-        # -- Enables or disables the service
-        enabled: true
-
-        # -- Set the service type
-        type: LoadBalancer
-
-        ports:
-          http:
-            enabled: true
-            primary: true
-            port:8989
-            protocol: HTTP 
-            #TCP
-            targetPort:8989
