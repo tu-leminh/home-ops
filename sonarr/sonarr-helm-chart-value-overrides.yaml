@@ -17,7 +17,7 @@ data:
         ports:
           main:
             port: 8989
-            targetPort: 80
+            targetPort: 8989
 
     probes:
       liveness:
