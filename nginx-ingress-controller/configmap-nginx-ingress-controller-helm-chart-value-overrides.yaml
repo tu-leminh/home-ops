@@ -791,7 +791,7 @@ data:
       ## This can be used to set the LoadBalancer service type to internal only.
       ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
       ##
-      annotations: {}
+      annotations: {"metallb.universe.tf/loadBalancerIPs": "192.168.1.10"}
       ## @param service.labels Labels for controller service
       ##
       labels: {}
