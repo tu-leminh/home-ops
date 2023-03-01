@@ -47,10 +47,3 @@ data:
 
     portal:
       enabled: true
-
-    ingress:
-      enabled: true
-      annotations: {"kubernetes.io/ingress.class": "nginx"}
-      pathType: ImplementationSpecific
-      hostname: sonarr.epricesx.duckdns.org
-      path: /
