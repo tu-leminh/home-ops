@@ -75,4 +75,5 @@ data:
                   # -- Overrides the service name reference for this path
                   name: sonarr
                   # -- Overrides the service port reference for this path
-                  port: 8989
+                  port: 
+                    number: 8989
