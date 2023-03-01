@@ -1,19 +1,19 @@
-#apiVersion: networking.k8s.io/v1
-#kind: Ingress
-#metadata:
-#  name: sonarr
-#  namespace: sonarr
-#  annotations:
-#    kubernetes.io/ingress.class: "nginx"
-#spec:
-#  rules:
-#  - host: sonarr.epricesx.duckdns.org
-#    http:
-#      paths:
-#      - path: /
-#        pathType: ImplementationSpecific
-#        backend:
-#          service:
-#            name: sonarr
-#            port:
-#              number: 8989
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sonarr
+  namespace: sonarr
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: sonarr.epricesx.duckdns.org
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sonarr
+            port:
+              number: 8989
