@@ -45,6 +45,7 @@ data:
 
     service:
       main:
+        type: LoadBalancer
         ports:
           main:
             port: 10232
