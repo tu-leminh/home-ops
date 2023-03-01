@@ -44,6 +44,10 @@ data:
       config:
         enabled: true
         mountPath: "/config"
+      shared:
+        enabled: false
+        type: pvc
+        mountPath: "/shared"
 
     portal:
       enabled: true
