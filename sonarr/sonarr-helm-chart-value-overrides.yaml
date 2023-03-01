@@ -45,7 +45,7 @@ data:
         enabled: true
         mountPath: "/config"
       shared:
-        enabled: false
+        enabled: true
         type: pvc
         mountPath: "/shared"
 
