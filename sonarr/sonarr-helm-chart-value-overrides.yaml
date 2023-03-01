@@ -47,3 +47,32 @@ data:
 
     portal:
       enabled: true
+    ingress:
+      main:
+        # -- Enables or disables the ingress
+        enabled: true
+
+        # -- Make this the primary ingress (used in probes, notes, etc...).
+        # If there is more than 1 ingress, make sure that only 1 ingress is marked as primary.
+        primary: true
+
+        annotations: {"kubernetes.io/ingress.class":"nginx"}
+          # kubernetes.io/ingress.class: nginx
+          # kubernetes.io/tls-acme: "true"
+
+        ingressClassName:   "nginx"
+
+        hosts:
+          -  # -- Host address. Helm template can be passed.
+            host: sonarr.epricesx.duckdns.org
+            ## Configure the paths for the host
+            paths:
+              -  # -- Path.  Helm template can be passed.
+                path: /
+                # -- Ignored if not kubeVersion >= 1.14-0
+                pathType: ImplementationSpecific
+                service:
+                  # -- Overrides the service name reference for this path
+                  name: sonarr
+                  # -- Overrides the service port reference for this path
+                  port: 8989
