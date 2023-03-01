@@ -51,6 +51,7 @@ data:
             port: 10232
             protocol: HTTP
       dns-tcp:
+        type: LoadBalancer
         enabled: true
         ports:
           dns-tcp:
@@ -58,6 +59,7 @@ data:
             port: 53
             targetPort: 53
       dns-udp:
+        type: LoadBalancer
         enabled: true
         ports:
           dns-udp:
