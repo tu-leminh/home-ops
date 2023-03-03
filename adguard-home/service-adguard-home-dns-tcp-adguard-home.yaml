@@ -4,11 +4,12 @@ metadata:
   namespace: adguard-home
   name: adguard-home-dns-tcp
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 192.168.1.199
+    metallb.universe.tf/loadBalancerIPs: 192.168.1.198
 spec:
   type: LoadBalancer
   selector:
     app.kubernetes.io/name: adguard-home
+  externalTrafficPolicy: Local
   ports:
     - protocol: TCP
       port: 53
