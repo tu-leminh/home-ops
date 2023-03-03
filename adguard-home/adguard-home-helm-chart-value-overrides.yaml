@@ -16,7 +16,7 @@ data:
     args:
       - --no-check-update
       - --host
-      - "192.168.1.9"
+      - "192.168.1.200"
       - --config
       - /opt/adguardhome/conf/AdGuardHome.yaml
       - --work-dir
