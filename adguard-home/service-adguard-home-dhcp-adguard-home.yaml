@@ -9,7 +9,6 @@ spec:
   type: LoadBalancer
   selector:
     app.kubernetes.io/name: adguard-home
-  externalTrafficPolicy: Local
   ports:
     - protocol: UDP
       port: 67
