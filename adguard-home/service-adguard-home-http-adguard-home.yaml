@@ -11,5 +11,5 @@ spec:
     app.kubernetes.io/name: adguard-home
   ports:
     - protocol: TCP
-      port: 10232
-      targetPort: 80
+      port: 80
+      targetPort: 10232
