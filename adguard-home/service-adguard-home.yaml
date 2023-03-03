@@ -3,6 +3,8 @@ kind: Service
 metadata:
   namespace: adguard-home
   name: adguard-home-dhcp
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 192.168.1.200
 spec:
   type: LoadBalancer
   selector:
