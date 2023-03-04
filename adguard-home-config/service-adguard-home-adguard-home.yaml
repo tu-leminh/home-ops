@@ -11,6 +11,27 @@ spec:
     app.kubernetes.io/name: adguard-home
   externalTrafficPolicy: Local
   ports:
-    - protocol: TCP
-      port: 10232
-      targetPort: 10232
+  - name: adguard-home
+    port: 10232
+    targetPort: 10232
+    protocol: TCP
+  - name: adguard-home
+    port: 10232
+    targetPort: 10232
+    protocol: TCP
+  - name: adguard-home-dns-tcp
+    port: 53
+    targetPort: 53
+    protocol: TCP
+  - name: adguard-home-dns-udp
+    port: 53
+    targetPort: 53
+    protocol: UDP
+  - name: adguard-home-dhcp-udp-2
+    port: 68
+    targetPort: 68
+    protocol: UDP
+  - name: adguard-home-dhcp-tcp
+    port: 68
+    targetPort: 68
+    protocol: TCP
