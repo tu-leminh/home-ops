@@ -9,6 +9,7 @@ spec:
   type: LoadBalancer
   selector:
     app.kubernetes.io/name: adguard-home
+  externalTrafficPolicy: Local
   ports:
     - protocol: TCP
       port: 10232
