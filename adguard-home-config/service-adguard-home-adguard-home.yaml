@@ -15,10 +15,7 @@ spec:
     port: 10232
     targetPort: 10232
     protocol: TCP
-  - name: adguard-home
-    port: 10232
-    targetPort: 10232
-    protocol: TCP
+
   - name: adguard-home-dns-tcp
     port: 53
     targetPort: 53
@@ -26,6 +23,11 @@ spec:
   - name: adguard-home-dns-udp
     port: 53
     targetPort: 53
+    protocol: UDP
+
+  - name: adguard-home-dhcp-udp-1
+    port: 67
+    targetPort: 67
     protocol: UDP
   - name: adguard-home-dhcp-udp-2
     port: 68
