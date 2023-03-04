@@ -16,7 +16,7 @@ data:
     args:
       - --no-check-update
       - --host
-      - "192.168.1.200"
+      - "0.0.0.0"
       - --config
       - /opt/adguardhome/conf/AdGuardHome.yaml
       - --work-dir
@@ -45,31 +45,75 @@ data:
 
     service:
       main:
-        primary: true
-        type: LoadBalancer
         ports:
-          http:
-            port: 3000
+          main:
+            port: 10232
+            protocol: HTTP
       dns-tcp:
         enabled: true
-        type: LoadBalancer
         ports:
           dns-tcp:
             enabled: true
             port: 53
-            protocol: TCP
             targetPort: 53
-        externalTrafficPolicy: Local
       dns-udp:
         enabled: true
-        type: LoadBalancer
         ports:
           dns-udp:
             enabled: true
-            port: 53
             protocol: UDP
+            port: 53
             targetPort: 53
-        externalTrafficPolicy: Local
+      dns-https:
+        enabled: true
+        ports:
+          dns-https:
+            enabled: true
+            protocol: HTTPS
+            port: 10234
+            targetPort: 443
+      dns-https-udp:
+        enabled: true
+        ports:
+          dns-https-udp:
+            enabled: true
+            protocol: UDP
+            port: 10234
+            targetPort: 443
+      dns-crypt:
+        enabled: true
+        ports:
+          dns-crypt:
+            enabled: true
+            protocol: HTTP
+            port: 5443
+            targetPort: 5443
+      dns-crypt-udp:
+        enabled: true
+        ports:
+          dns-crypt-udp:
+            enabled: true
+            protocol: UDP
+            port: 5443
+            targetPort: 5443
+      dns-quic-udp-1:
+        enabled: true
+        ports:
+          dns-quic-udp-1:
+            enabled: true
+            protocol: UDP
+            port: 784
+            targetPort: 784
+          dns-quic-udp-2:
+            enabled: true
+            protocol: UDP
+            port: 853
+            targetPort: 853
+          dns-quic-udp-3:
+            enabled: true
+            protocol: UDP
+            port: 8853
+            targetPort: 8853
 
     persistence:
       config:
