@@ -1,16 +1,15 @@
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: adguard-home
-  name: adguard-home
-  annotations:
-    metallb.universe.tf/loadBalancerIPs: 192.168.1.200
-spec:
-  type: LoadBalancer
-  selector:
-    app.kubernetes.io/name: adguard-home
-  externalTrafficPolicy: Local
-  ports:
-    - protocol: TCP
-      port: 10232
-      targetPort: 10232
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  namespace: adguard-home
+#  name: adguard-home
+#  annotations:
+#    metallb.universe.tf/loadBalancerIPs: 192.168.1.200
+#spec:
+#  type: LoadBalancer
+#  selector:
+#    app.kubernetes.io/name: adguard-home
+#  ports:
+#    - protocol: TCP
+#      port: 10232
+#      targetPort: 10232
