@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: sonarr-helm-chart-value-overrides
-  namespace: sonarr
+  namespace: autopirate
 data:
   values.yaml: |-
     image:
