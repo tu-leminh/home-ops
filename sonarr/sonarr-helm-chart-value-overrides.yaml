@@ -6,6 +6,10 @@ metadata:
   namespace: autopirate
 data:
   values.yaml: |-
+    global:
+      annotations: {"metallb.universe.tf/loadBalancerIPs": "192.168.1.199"}
+      addMetalLBAnnotations: true
+
     image:
       repository: tccr.io/truecharts/sonarr
       pullPolicy: IfNotPresent
@@ -13,6 +17,7 @@ data:
 
     service:
       main:
+        type: LoadBalancer
         ports:
           main:
             port: 8989
@@ -43,6 +48,7 @@ data:
       config:
         enabled: true
         mountPath: "/config"
-
-    portal:
-      enabled: true
+      shared:
+        enabled: true
+        type: pvc
+        mountPath: "/shared"
