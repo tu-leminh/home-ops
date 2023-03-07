@@ -5,7 +5,6 @@ metadata:
   namespace: rook-ceph
 data:
   values.yaml: |-  
-    # <upstream values go here>
     # Default values for rook-ceph-operator
     # This is a YAML-formatted file.
     # Declare variables to be passed into your templates.
@@ -258,6 +257,7 @@ data:
             limits:
               memory: 256Mi
               cpu: 100m
+
       # -- CEPH CSI RBD plugin resource requirement list
       # @default -- see values.yaml
       csiRBDPluginResource: |
@@ -285,6 +285,7 @@ data:
             limits:
               memory: 256Mi
               cpu: 100m
+
       # -- CEPH CSI CephFS provisioner resource requirement list
       # @default -- see values.yaml
       csiCephFSProvisionerResource: |
@@ -336,6 +337,7 @@ data:
             limits:
               memory: 256Mi
               cpu: 100m
+
       # -- CEPH CSI CephFS plugin resource requirement list
       # @default -- see values.yaml
       csiCephFSPluginResource: |
@@ -363,6 +365,7 @@ data:
             limits:
               memory: 256Mi
               cpu: 100m
+
       # -- CEPH CSI NFS provisioner resource requirement list
       # @default -- see values.yaml
       csiNFSProvisionerResource: |
@@ -382,6 +385,7 @@ data:
             limits:
               memory: 1Gi
               cpu: 500m
+
       # -- CEPH CSI NFS plugin resource requirement list
       # @default -- see values.yaml
       csiNFSPluginResource: |
@@ -401,6 +405,7 @@ data:
             limits:
               memory: 1Gi
               cpu: 500m
+
       # Set provisionerTolerations and provisionerNodeAffinity for provisioner pod.
       # The CSI provisioner would be best to start on the same nodes as other ceph daemons.
 

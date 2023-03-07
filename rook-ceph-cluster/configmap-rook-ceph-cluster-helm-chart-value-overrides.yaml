@@ -5,7 +5,6 @@ metadata:
   namespace: rook-ceph
 data:
   values.yaml: |-  
-    # <upstream values go here>
     # Default values for a single rook-ceph cluster
     # This is a YAML-formatted file.
     # Declare variables to be passed into your templates.
@@ -31,7 +30,7 @@ data:
     # Installs a debugging toolbox deployment
     toolbox:
       # -- Enable Ceph debugging pod deployment. See [toolbox](../Troubleshooting/ceph-toolbox.md)
-      enabled: true
+      enabled: false
       # -- Toolbox image, defaults to the image used by the Ceph cluster
       image: #quay.io/ceph/ceph:v17.2.3
       # -- Toolbox tolerations
@@ -52,9 +51,9 @@ data:
     monitoring:
       # -- Enable Prometheus integration, will also create necessary RBAC rules to allow Operator to create ServiceMonitors.
       # Monitoring requires Prometheus to be pre-installed
-      enabled: true
+      enabled: false
       # -- Whether to create the Prometheus rules for Ceph alerts
-      createPrometheusRules: true
+      createPrometheusRules: false
       # -- The namespace in which to create the prometheus rules, if different from the rook cluster namespace.
       # If you have multiple rook-ceph clusters in the same k8s cluster, choose the same namespace (ideally, namespace with prometheus
       # deployed) to set rulesNamespace for all the clusters. Otherwise, you will get duplicate alerts with multiple alert definitions.
@@ -150,7 +149,7 @@ data:
         # port: 8443
         # Serve the dashboard using SSL (if using ingress to expose the dashboard and `ssl: true` you need to set
         # the corresponding "backend protocol" annotation(s) for your ingress controller of choice)
-        ssl: false
+        ssl: true
 
       # Network configuration, see: https://github.com/rook/rook/blob/master/Documentation/CRDs/ceph-cluster-crd.md#network-configuration-settings
       network:
@@ -406,7 +405,7 @@ data:
     ingress:
       # -- Enable an ingress for the ceph-dashboard
       dashboard:
-        {"kubernetes.io/ingress.class": "nginx"}
+        {}
         # annotations:
         #   external-dns.alpha.kubernetes.io/hostname: dashboard.example.com
         #   nginx.ingress.kubernetes.io/rewrite-target: /ceph-dashboard/$2
@@ -415,8 +414,8 @@ data:
         #   nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         #   nginx.ingress.kubernetes.io/server-snippet: |
         #     proxy_ssl_verify off;
-          host:
-            name: dashboard.epricesx.duckdns.org
+        # host:
+        #   name: dashboard.example.com
         #   path: "/ceph-dashboard(/|$)(.*)"
         # tls:
         # - hosts:
@@ -424,7 +423,7 @@ data:
         #   secretName: testsecret-tls
         ## Note: Only one of ingress class annotation or the `ingressClassName:` can be used at a time
         ## to set the ingress class
-          ingressClassName: nginx
+        # ingressClassName: nginx
 
     # -- A list of CephBlockPool configurations to deploy
     # @default -- See [below](#ceph-block-pools)
