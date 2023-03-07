@@ -46,10 +46,10 @@ data:
 
     persistence:
       config:
-        enabled: true
+        enabled: false
         mountPath: "/config"
       shared:
-        enabled: true
+        enabled: false
         type: pvc
         mountPath: "/shared"
 
