@@ -12,5 +12,5 @@ spec:
   resources:
     requests:
       storage: 1000Mi
-  storageClassName: longhorn
+  storageClassName: openebs-hostpath
 status: {}
