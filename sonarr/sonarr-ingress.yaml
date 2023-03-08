@@ -14,6 +14,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: sonarr
+            name: sonarr-tcp
             port:
               number: 8989
