@@ -8,7 +8,7 @@ metadata:
   name: downloads
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 50Gi
