@@ -4,8 +4,6 @@ services:
     labels:
       kompose.service.type: loadbalancer
       kompose.volume.storage-class-name: longhorn
-      kompose.service.expose: "sonarr.epricesx.duckdns.org"
-      kompose.service.expose.ingress-class-name: "nginx"
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
     environment:
@@ -14,8 +12,8 @@ services:
       - TZ=Etc/UTC
     volumes:
       - sonarr:/config
-      - tv:/tv #optional
-      - downloads:/downloads #optional
+      - tv:/tv 
+      - downloads:/downloads 
     ports:
       - 8989:8989
     restart: always
