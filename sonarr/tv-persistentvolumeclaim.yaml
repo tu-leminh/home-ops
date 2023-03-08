@@ -8,9 +8,9 @@ metadata:
   name: tv
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 100Gi
+      storage: 100Mi
   storageClassName: openebs-hostpath
 status: {}

@@ -8,9 +8,9 @@ metadata:
   name: downloads
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 50Gi
+      storage: 100Mi
   storageClassName: openebs-hostpath
 status: {}
