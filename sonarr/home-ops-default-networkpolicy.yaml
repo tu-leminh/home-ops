@@ -3,13 +3,13 @@ kind: NetworkPolicy
 metadata:
   namespace: autopirate
   creationTimestamp: null
-  name: sonarr-default
+  name: home-ops-default
 spec:
   ingress:
     - from:
         - podSelector:
             matchLabels:
-              io.kompose.network/sonarr-default: "true"
+              io.kompose.network/home-ops-default: "true"
   podSelector:
     matchLabels:
-      io.kompose.network/sonarr-default: "true"
+      io.kompose.network/home-ops-default: "true"
