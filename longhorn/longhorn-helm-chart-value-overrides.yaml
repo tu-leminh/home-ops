@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: longhorn-helm-chart-value-overrides
-  namespace: autopirate
+  namespace: longhorn-system
 data:
   values.yaml: |-
     # Default values for longhorn.
