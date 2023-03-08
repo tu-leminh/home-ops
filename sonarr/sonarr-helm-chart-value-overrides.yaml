@@ -47,11 +47,11 @@ data:
     persistence:
       config:
         enabled: true
-        type: EmptyDir
+        type: emptyDir
         mountPath: "/config"
       shared:
         enabled: true
-        type: EmptyDir
+        type: emptyDir
         mountPath: "/shared"
 
     portal:
