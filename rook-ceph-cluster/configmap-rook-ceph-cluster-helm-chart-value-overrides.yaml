@@ -607,4 +607,3 @@ data:
           parameters:
             # note: objectStoreNamespace and objectStoreName are configured by the chart
             region: us-east-1
-    i
