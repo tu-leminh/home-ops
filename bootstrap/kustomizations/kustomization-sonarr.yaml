@@ -4,6 +4,8 @@ metadata:
   name: sonarr
   namespace: flux-system
 spec:
+  dependsOn: # (1)!
+  - name: rook-ceph-cluster--rook-ceph  
   interval: 15m
   path: ./sonarr
   prune: true # remove any elements later removed from the above path
