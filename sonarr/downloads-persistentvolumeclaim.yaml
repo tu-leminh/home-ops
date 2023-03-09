@@ -12,5 +12,5 @@ spec:
   resources:
     requests:
       storage: 100Mi
-  storageClassName: openebs-hostpath
+  storageClassName: ceph-filesystem
 status: {}

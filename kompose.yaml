@@ -3,7 +3,7 @@ services:
   sonarr:
     labels:
       kompose.service.type: loadbalancer
-      kompose.volume.storage-class-name: openebs-hostpath
+      kompose.volume.storage-class-name: ceph-filesystem
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
     environment:
