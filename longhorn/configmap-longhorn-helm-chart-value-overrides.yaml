@@ -116,8 +116,8 @@ data:
       backupTarget: ~
       backupTargetCredentialSecret: ~
       allowRecurringJobWhileVolumeDetached: ~
-      createDefaultDiskLabeledNodes: false
-      defaultDataPath: ~
+      createDefaultDiskLabeledNodes: ~
+      defaultDataPath: /mnt/sdb/
       defaultDataLocality: ~
       replicaSoftAntiAffinity: true
       replicaAutoBalance: ~
