@@ -119,7 +119,7 @@ data:
       createDefaultDiskLabeledNodes: ~
       defaultDataPath: /mnt/sdb/
       defaultDataLocality: ~
-      replicaSoftAntiAffinity: true
+      replicaSoftAntiAffinity: false
       replicaAutoBalance: ~
       storageOverProvisioningPercentage: ~
       storageMinimalAvailablePercentage: ~
