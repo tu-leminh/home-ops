@@ -2,8 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: podinfo-helm-chart-value-overrides
-  namespace: podinfo
+  name: longhorn-helm-chart-value-overrides
+  namespace: longhorn-system
 data:
   values.yaml: |-
     # Default values for longhorn.
