@@ -8,9 +8,9 @@ metadata:
   name: tv
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 100Mi
+      storage: 200Gi
   storageClassName: longhorn
 status: {}

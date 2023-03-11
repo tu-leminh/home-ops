@@ -8,9 +8,9 @@ metadata:
   name: downloads
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 100Mi
+      storage: 100Gi
   storageClassName: longhorn
 status: {}
