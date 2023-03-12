@@ -7,11 +7,13 @@ metadata:
     kompose.service.type: loadbalancer
     kompose.version: 1.28.0 (c4137012e)
     kompose.volume.storage-class-name: longhorn
+    metallb.universe.tf/allow-shared-ip: "transmission"
   creationTimestamp: null
   labels:
     io.kompose.service: transmission-udp
   name: transmission-udp
 spec:
+  loadBalancerIP: 192.168.1.199
   ports:
     - name: "51413"
       port: 51413
