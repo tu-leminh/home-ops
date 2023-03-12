@@ -1,0 +1,20 @@
+---
+version: "2.1"
+services:
+  prowlarr:
+    labels:
+      kompose.service.type: loadbalancer
+      kompose.volume.storage-class-name: longhorn
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - prowlarr:/config
+    ports:
+      - 9696:9696
+    restart: always
+volumes:
+  prowlarr:

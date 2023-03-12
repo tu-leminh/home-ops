@@ -3,22 +3,22 @@ kind: Service
 metadata:
   namespace: autopirate
   annotations:
-    kompose.cmd: C:\ProgramData\chocolatey\lib\kubernetes-kompose\tools\kompose.exe convert -f kompose.yaml
+    kompose.cmd: C:\ProgramData\chocolatey\lib\kubernetes-kompose\tools\kompose.exe convert -f prowlarr.yaml
     kompose.service.type: loadbalancer
     kompose.version: 1.28.0 (c4137012e)
     kompose.volume.storage-class-name: longhorn
   creationTimestamp: null
   labels:
-    io.kompose.service: sonarr-tcp
-  name: sonarr-tcp
+    io.kompose.service: prowlarr-tcp
+  name: prowlarr-tcp
 spec:
-  loadBalancerIP: 192.168.1.198
+  loadBalancerIP: 192.168.1.197
   ports:
-    - name: "8989"
-      port: 8989
-      targetPort: 8989
+    - name: "9696"
+      port: 9696
+      targetPort: 9696
   selector:
-    io.kompose.service: sonarr
+    io.kompose.service: prowlarr
   type: LoadBalancer
 status:
   loadBalancer: {}
