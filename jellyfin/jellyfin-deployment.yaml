@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: autopirate
+  annotations:
+    kompose.cmd: C:\ProgramData\chocolatey\lib\kubernetes-kompose\tools\kompose.exe convert -f jellyfin.yaml
+    kompose.service.type: loadbalancer
+    kompose.version: 1.28.0 (c4137012e)
+    kompose.volume.storage-class-name: longhorn
+  creationTimestamp: null
+  labels:
+    io.kompose.service: jellyfin
+  name: jellyfin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: jellyfin
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\ProgramData\chocolatey\lib\kubernetes-kompose\tools\kompose.exe convert -f jellyfin.yaml
+        kompose.service.type: loadbalancer
+        kompose.version: 1.28.0 (c4137012e)
+        kompose.volume.storage-class-name: longhorn
+      creationTimestamp: null
+      labels:
+        io.kompose.network/komposes-default: "true"
+        io.kompose.service: jellyfin
+    spec:
+      containers:
+        - env:
+            - name: PGID
+              value: "1000"
+            - name: PUID
+              value: "1000"
+            - name: TZ
+              value: Etc/UTC
+          image: lscr.io/linuxserver/jellyfin:latest
+          name: jellyfin
+          ports:
+            - containerPort: 8096
+            - containerPort: 8920
+            - containerPort: 7359
+              protocol: UDP
+            - containerPort: 1900
+              protocol: UDP
+          resources: {}
+          volumeMounts:
+            - mountPath: /config
+              name: jellyfin
+            - mountPath: /data/tvshows
+              name: tv
+            - mountPath: /data/movies
+              name: movie
+      restartPolicy: Always
+      volumes:
+        - name: jellyfin
+          persistentVolumeClaim:
+            claimName: jellyfin
+        - name: tv
+          persistentVolumeClaim:
+            claimName: tv
+        - name: movie
+          persistentVolumeClaim:
+            claimName: movie
+status: {}
