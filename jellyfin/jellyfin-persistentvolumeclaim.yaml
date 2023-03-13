@@ -8,9 +8,9 @@ metadata:
   name: jellyfin
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 1000Mi
+      storage: 1Gi
   storageClassName: longhorn
 status: {}
