@@ -12,7 +12,7 @@ metadata:
     io.kompose.service: jellyfin
   name: jellyfin
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       io.kompose.service: jellyfin
