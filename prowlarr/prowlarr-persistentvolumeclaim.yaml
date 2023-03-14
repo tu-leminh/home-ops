@@ -8,7 +8,7 @@ metadata:
   name: prowlarr
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
