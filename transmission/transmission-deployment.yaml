@@ -12,7 +12,7 @@ metadata:
     io.kompose.service: transmission
   name: transmission
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       io.kompose.service: transmission

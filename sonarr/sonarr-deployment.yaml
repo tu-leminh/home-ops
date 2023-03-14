@@ -12,7 +12,7 @@ metadata:
     io.kompose.service: sonarr
   name: sonarr
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       io.kompose.service: sonarr
